@@ -23,10 +23,13 @@ const iPhone11 = {
     },
     calculateDiscoutedPrice: function( percentage ) {
         return this.price * ( 100 -percentage ) / 100;
-    }}
-    
-    // create the variables using destructuring -the variables should have values as shown below.// destructure here...// below line logs -iPhone 11   Apple   128   12 MP Ultra Wide   Greenconsole.log( name, brand, ram, rearCamera, secondColor );
+    }
+};
 
-    const { name, manufacturer : brand, specs: { memory: { value: ram }, cameras: { rear: rearCamera }, availableColors: [, secondColor] } } = iPhone11;
+iPhone11.calculateDiscoutedPrice = iPhone11.calculateDiscoutedPrice.bind( iPhone11 );
 
-    console.log( name, brand, ram, rearCamera, secondColor );
+const printPhoneDetails = ( { manufacturer, name, price,  calculateDiscoutedPrice} ) => {
+    console.log (`${manufacturer} ${name} is available at a 10% discounted rate of $${calculateDiscoutedPrice(10)}`);
+};
+
+printPhoneDetails(iPhone11);
