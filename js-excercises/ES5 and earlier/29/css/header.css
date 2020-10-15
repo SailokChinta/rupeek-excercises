@@ -1,0 +1,35 @@
+#headers {
+    padding-top: 20px;
+}
+
+#headers > div {
+    width: 60%;
+    margin: auto;
+}
+
+.collapse-header {
+    font-family: monospace;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+.collapse-text {
+    font-family: monospace;
+    text-align: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.collapsed-header {
+    margin-bottom: 4px;
+}
+
+.collapsed-text {
+    display: none;
+}

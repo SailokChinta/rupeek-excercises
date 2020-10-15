@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            input {
+                display: block;
+                margin-top: 4px;
+                margin-bottom: 4px;
+            }
+
+            span {
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <hr />
+        <input type="number" name="number-1" id="number-1">
+        <input type="number" name="number-2" id="number-2">
+        <select name="operator" id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <span id="result"></span>
+        <!-- <input type="button" name="calculate" id="calculate" value="Calculate" onclick="calculate()"> -->
+    </body>
+    <script>
+        function calculate ( operator ) {
+            let number1 = document.querySelector('#number-1').value;
+
+            let number2 = document.querySelector('#number-2').value;
+
+            let result = 0;
+            number1 = parseInt(number1);
+            number2 = parseInt(number2);
+
+            if ( operator === '+' ) {
+                result = number1 + number2;
+            } else if ( operator === '-' ) {
+                result = number1 - number2;
+            } else if ( operator === '*' ) {
+                result = number1 * number2;
+            } else {
+                result = number1 / number2;
+            }
+
+            document.getElementById('result').innerText = result.toString();
+        }
+
+        const selectButton = document.querySelector('select');
+        selectButton.addEventListener('mousedown', () => { 
+            console.log('hello');
+            let number1 = document.querySelector('#number-1').value;
+
+            let number2 = document.querySelector('#number-2').value;
+            if ( number1.length > 0 && number2.length > 0 ) {
+                const index = selectButton.options.selectedIndex;
+                const operator = selectButton.children[index].value;
+
+                calculate(operator);
+            }
+
+        });
+    </script>
+</html>

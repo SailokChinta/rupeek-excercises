@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi recusandae eius illo quam excepturi nulla repellat! Repudiandae doloribus quaerat unde iste consequatur atque a doloremque quibusdam, ducimus vitae nam praesentium?
+        </p>
+        <form>
+            <input type="text" min="8">
+            <input type="submit">
+        </form>
+    </body>
+    <script>
+        const para = document.querySelector('p');
+        para.addEventListener('click',(event)=>{
+            alert(para.textContent);
+        });
+
+        const input = document.querySelector('input[type=text]');
+        input.addEventListener('keyup', ()=>{
+            console.log('hell');
+            if ( input.value.trim().length >= 8 ) {
+                input.style.backgroundColor = 'lightgreen';
+            } else if ( input.value.trim().length < 8 && input.value.trim().length > 0 ) {
+                input.style.backgroundColor = 'lightpink';
+            } else {
+                input.style.backgroundColor = 'white';
+            }
+        });
+
+        const submit = document.querySelector('input[type=submit]');
+        submit.addEventListener('click',(event)=>{
+            if ( input.value.trim().length < 8 ) {
+                event.preventDefault();
+                document.querySelector('body').innerHTML+= '<span>Please fill the form correctly</span>';
+            }
+        });
+
+    </script>
+</html>

@@ -23,15 +23,13 @@ const payroll = {
     raise: function() {
         this.employees.forEach(function ( employee ) {
             const dept = employee.dept;
-            const salary = employee.salary;
-            // console.log(payroll.hikePercentage)
-            
-            const hikePercentage = payroll.hikePercentage[dept];
+            const salary = employee.salary; 
+            const hikePercentage = this.hikePercentage[dept];
             employee.salary = ( ( 100 + hikePercentage ) / 100 ) * salary;
         });
     }
 }
 
-payroll.raise();
+payroll.raise.bind(payroll);
 console.log( payroll.employees );
 

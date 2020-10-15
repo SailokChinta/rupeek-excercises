@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .para {
+                border: 1px solid black;
+                padding: 2px;
+                color: olive;
+            }
+        </style>
+    </head>
+<body>
+    <p id = 'para-1'>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quibusdam libero asperiores veniam similique, quos nisi quod quaerat praesentium repellendus ea eveniet nam aperiam maiores ut at fugit earum voluptas.
+    </p>
+    <p id = 'para-2'>
+        Animi ratione voluptatum, cumque aperiam reprehenderit excepturi sed omnis modi mollitia dolores placeat facere, quia temporibus enim quis similique esse? In distinctio enim dignissimos qui ipsum ratione nam beatae optio.
+    </p>
+    <p id = 'para-3'>
+        Id, mollitia libero ducimus eveniet, sequi neque dolorem vero exercitationem minima doloremque rem tempore reiciendis nisi expedita, fuga illum. Fuga non nihil nobis laborum maxime velit numquam amet similique aliquam!
+    </p>
+</body>
+<script>
+    const body = document.querySelector ( 'body' );
+    const para2 = document.querySelector( '#para-2' );
+    // 1
+    body.innerHTML = '<p> first para </p>' + body.innerHTML;
+    // 2
+    body.innerHTML += '<p> last para </p>';
+    // 3
+    console.log ( para2.innerHTML );
+    // 4
+    para2.innerHTML = '<span> Hello </span> <span> World </span>';
+    // 5
+    console.log ( body.children[2][ 'id' ] );
+    console.log ( body.children[2].getAttribute( 'id' ) );
+    // 6
+    body.children[2].setAttribute ( 'id', 'new-para-2' );
+    // 7
+    body.children[2].setAttribute( 'name', 'some-random-name' );
+    // 8
+    document.querySelector( '#para-3' ).style.backgroundColor = "crimson"; 
+    // document.querySelector( '#para-3' ).style.color = "white";
+    // 9 
+    document.querySelector( '#para-3' ).className= 'para';
+</script>
+</html>

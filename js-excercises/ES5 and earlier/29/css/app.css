@@ -1,0 +1,44 @@
+.navbar {
+    color: purple;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.5em;
+    height: 60px;
+    background-color: rgb(233, 233, 233);
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-left,
+.navbar-right {
+    list-style-type: none;
+    margin: auto;
+}
+
+.navbar-left > li,
+.navbar-right > li {
+    display: inline;
+    
+}
+
+.navbar-left > li:hover,
+.navbar-right > li:hover {
+    color: rgb(177, 47, 177);
+    background-color: rgb(201, 201, 201);
+}
+
+.navbar-left {
+    width: 60%;
+    float: left;
+    padding-top: 5px;
+}
+
+.navbar-right {
+    float: right;
+    padding-right: 20px;
+    padding-top: 20px;
+}
+
+#logo {
+    font-size: 1.7em;
+}
