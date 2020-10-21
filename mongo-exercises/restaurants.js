@@ -350,7 +350,7 @@ db.restaurants.find(
         'grades.1': {
             $elemMatch: {
                 grade: 'A',
-                score: 11,
+                score: 9,
                 date: ISODate('2014-08-11T00:00:00Z')
             }
         }
