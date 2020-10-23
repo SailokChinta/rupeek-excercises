@@ -1,6 +1,6 @@
 const express = require( 'express' );
 const path = require( 'path' );
-const { sendWorkshops, sendWorkshopById } = require( '../controller/workshops' );
+const { getWorkshops, getWorkshopById } = require( '../controller/workshops' );
 
 const router = express.Router();
 
@@ -8,7 +8,7 @@ router.get( '/', ( req, res ) => {
     let error, workshops;
     
     try{
-        workshops = sendWorkshops();
+        workshops = getWorkshops();
     } catch( err ) {
         error = err;
     }
@@ -22,7 +22,7 @@ router.get( '/', ( req, res ) => {
 router.get( '/:id', ( req, res ) => {
     let error, workshop;
     try{
-        workshop = sendWorkshopById( req.params.id );
+        workshop = getWorkshopById( +req.params.id );
     } catch( err ) {
         error = err;
     }

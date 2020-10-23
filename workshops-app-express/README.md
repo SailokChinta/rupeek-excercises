@@ -97,3 +97,33 @@ use JS => <% if ( cond1 ) { %>
 
 render HTML => <%- <p> HTML Content </p> %>
 ```
+## Connection To Database [ MongoDB ]
+1. For Connection with Database, we use either mongodb driver or mongoose.
+2. First lets see using MongoDB, to install it
+```
+npm i mongodb
+```
+3.  This is the way to create a mongo client
+```
+const { MongoClient } = require("mongodb");
+
+const uri = "mongodb://localhost:27017";
+const client = new MongoClient(uri);
+```
+4. To connect to database, also we need to export the client for using it in controller files.
+```
+async function connect() {
+    try {
+        await client.connect();
+    } catch( error ) {
+        await client.close();
+    }
+}
+
+module.export = { client }
+```
+5. For CRUD operations, visit here [MongoDB Doc](https://docs.mongodb.com/drivers/node/usage-examples/findOne).
+6. Now lets use Mongoose, for installing use
+```
+npm i mongoose
+```

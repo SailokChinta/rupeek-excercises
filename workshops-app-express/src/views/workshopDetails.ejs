@@ -3,21 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
         <title>Workshop Details</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand navbar-dark bg-dark">
-            <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/workshops">Workshops</a>
-                </li>
-            </ul>
-        </nav>
-
+        <%- include( 'navbar' ); -%>
         <div class="container my-4">
             <% if( error ) { %>
                 <div class = "row">
@@ -57,6 +47,34 @@
                                                 <small class="text-muted">
                                                     <%= workshop.time %>
                                                 </small>
+                                            </p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p> 
+                                                <!-- <i class="workshop.modes.online ? 'fa fa-check' : 'fa fa-times'" /> -->
+                                                <% if( workshop.modes.online ){ %> 
+                                                    <%- "<i class= 'fa fa-check' />" %>
+                                                    <!-- <%- "<strong>hello</strong>" %> -->
+                                                <% } %>
+                                                <% if( !workshop.modes.online ){ %> 
+                                                    <%- "<i class= 'fa fa-times' />" %>
+                                                    <!-- <%- "<strong>hello</strong>" %> -->
+                                                <% } %>
+                                                <!-- 'fa-check' or 'fa-times' -->
+                                                <small>Online</small>
+                                            </p>
+                                            <p>
+                                                <!-- <i class="workshop.modes.inPerson ? 'fa fa-check' : 'fa fa-times'" /> -->
+                                                <!-- 'fa-check' or 'fa-times' -->
+                                                <% if( workshop.modes.inPerson ){ %> 
+                                                    <%- "<i class= 'fa fa-check' />" %>
+                                                    <!-- <%- "<strong>hello</strong>" %> -->
+                                                <% } %>
+                                                <% if( !workshop.modes.inPerson ){ %> 
+                                                    <%- "<i class= 'fa fa-times' />" %>
+                                                    <!-- <%- "<strong>hello</strong>" %> -->
+                                                <% } %>
+                                                <small>In person</small>
                                             </p>
                                         </div>
                                     </div>
