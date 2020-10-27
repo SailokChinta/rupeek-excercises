@@ -127,3 +127,15 @@ module.export = { client }
 ```
 npm i mongoose
 ```
+## Implementing Authentication and Authorization
+1. install jsonwebtoken package
+```
+npm i jsonwebtoken
+```
+2. Create a route for authentication and include the router in index.js
+3. Create a post route.
+4. Create a auth.js file in controller and create a function sendToken
+5. do error checking and sign a jwt token and send as response
+6. Create a utils folder and create a function authenticate
+7. This function takes the token passed by user and authorizes it
+7. Check each and every route and include authenticate function where necessary.
